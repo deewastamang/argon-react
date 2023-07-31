@@ -1,0 +1,30 @@
+.table-data { 
+  
+}
+
+.table-data > h2 {
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+}
+
+.add-btn {
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.cross-icon {
+    color: white;
+    font-size: 2em;
+    opacity: .3;
+}
+
+.cross-icon:hover {
+    opacity: 1;
+    color: red;
+    cursor: pointer;
+}
+
+
+
