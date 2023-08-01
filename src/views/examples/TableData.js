@@ -52,21 +52,16 @@ export default function TableData() {
   }
 
   const customStyles = {
-    title: {
-      style: {
-        textAlign: 'center',
-        fontSize: '2rem',
-      }
-    },
         rows: {
           style: {
             fontSize: "14px", // Custom font size for all rows
-            fontWeight: "normal", // Custom font weight for all rows
+            fontWeight: "600", // Custom font weight for all rows
+            color: '#525f7f'
           },
         },
         cells: {
           style: {
-            padding: "8px", // Custom cell padding
+            padding: "12px", // Custom cell padding
           },
         },
         headCells: {
@@ -74,6 +69,8 @@ export default function TableData() {
             fontSize: "16px", // Custom font size for header cells
             fontWeight: "bold", // Custom font weight for header cells
             background: "", // Custom background color for header cells
+            color: '#525f7f'
+
           },
         },
         pagination: {
@@ -91,9 +88,9 @@ export default function TableData() {
         name: 'Actions',
         cell: (row) => (
             <div>
-                <button style={{padding: '.5em', margin: '0 10px', borderRadius: '5px',}} onClick={() => handleEdit(row)}>Edit</button>
+                <button className='btn-primary' style={{padding: '.5em', margin: '0 10px', borderRadius: '5px',}} onClick={() => handleEdit(row)}>Edit</button>
 
-                <button style={{padding: '.5em', margin: '0 10px', borderRadius: '5px',}} onClick={() =>  handleDelete(row)}>Delete</button>
+                <button className='btn-primary' style={{padding: '.5em', margin: '0 10px', borderRadius: '5px',}} onClick={() =>  handleDelete(row)}>Delete</button>
             </div>
         )
     },
@@ -105,7 +102,7 @@ export default function TableData() {
         {modal && <EditModal rowData={selectedRowData} toggle={() => setModal(false)} onUpdate={handleUpdate} />}
       <Header />
       <div style={{width: '94%',margin: '-6rem 0 0 2.5rem'}}>
-        <DataTable title='Data Table for data from API' 
+        <DataTable title='Data table from API and Local Storage' 
         columns={columns} 
         data={localStorageData} 
         customStyles={customStyles}
@@ -116,7 +113,7 @@ export default function TableData() {
       />
 
       </div>
-        <button className='add-btn' onClick={() => setAddModal(true)}>Add New</button>
+        <button className='add-btn btn-primary' onClick={() => setAddModal(true)}>Add New</button>
     </div>
   );
 }
